@@ -9,13 +9,17 @@
     \item \code{text}: The text from the scripts line by line.
 }}
 \usage{
-dub_text()
+dub_text(dub_id)
+}
+\arguments{
+\item{dub_id}{A list of IDs for which the texts should be imported.}
 }
 \description{
 The text of the audiovisual translations, formatted to be convenient for text analysis.
 }
 \examples{
 dub_text()
+dub_text(c(1, 2))
 
 }
 \seealso{
