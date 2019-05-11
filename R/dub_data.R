@@ -2,7 +2,7 @@
 #'
 #' Creates the tibbles that should be returned for the separate functions
 #'
-#' @importFrom docxtractr read_docx
+#' @import docxtractr
 #' @import stringr
 #' @import dplyr
 
