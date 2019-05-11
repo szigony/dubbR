@@ -4,6 +4,8 @@
 #'
 #' @export
 #'
+#' @param dub_id A list of IDs for which the characters should be imported.
+#'
 #' @format Returns a tibble with the characters from the scripts.
 #' \itemize{
 #'     \item \code{dub_id}: Unique identifier of the scripts.
@@ -12,10 +14,21 @@
 #'
 #' @examples
 #' dub_characters()
+#' dub_characters(c(1, 2))
 #'
 #' @seealso dub_metadata, dub_text, dub_shows
 
-dub_characters <- function() {
+dub_characters <- function(dub_id) {
   data <- dub_data()
-  return(data$dub_characters)
+
+  if (missing(dub_id)) {
+    dub_characters <- data$dub_characters
+  } else {
+    id_list <- c(dub_id)
+
+    dub_characters <- data$dub_characters %>%
+      filter(dub_id %in% id_list)
+  }
+
+  return(dub_characters)
 }

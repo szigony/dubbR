@@ -9,13 +9,17 @@
     \item \code{character}: The characters that appear in the scripts.
 }}
 \usage{
-dub_characters()
+dub_characters(dub_id)
+}
+\arguments{
+\item{dub_id}{A list of IDs for which the characters should be imported.}
 }
 \description{
 The characters from the audiovisual translations. This can be used to create \code{anti_join}s so that the character names wouldn't skew the analysis.
 }
 \examples{
 dub_characters()
+dub_characters(c(1, 2))
 
 }
 \seealso{
