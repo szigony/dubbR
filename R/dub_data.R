@@ -56,7 +56,8 @@ dub_data <- function() {
     # Remove empty rows
     text <- raw_text %>%
       rename(text = V3) %>%
-      filter(text != "") %>%
+      filter(text != "", text != "FŐCÍM") %>%
+      filter(!grepl("(\\d\\. SZAKASZ VÉGE)", text)) %>%
       mutate(dub_id = metadata$dub_id) %>%
       select(dub_id, text)
 
