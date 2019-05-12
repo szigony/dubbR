@@ -15,6 +15,7 @@
 #' @examples
 #' dub_text()
 #' dub_text(c(1, 2))
+#' dub_text(dub_id_by_shows("Fifth Gear"))
 #'
 #' @seealso dub_metadata, dub_characters, dub_shows
 
