@@ -20,6 +20,7 @@ The characters from the audiovisual translations. This can be used to create \co
 \examples{
 dub_characters()
 dub_characters(c(1, 2))
+dub_characters(dub_id_by_shows("Fifth Gear"))
 
 }
 \seealso{
