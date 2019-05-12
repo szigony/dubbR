@@ -3,6 +3,18 @@ A package for text analysis made from Hungarian script translations by Patrik Sz
 
 This package was created as part of an assignment for *Data Science 4 - Unstructured Text Analysis* at CEU, Budapest.
 
+#### Table of Contents
+
+- [Installation](#installation)
+- [Functions](#functions)
+  - [dub_data](#dub_data)
+  - [dub_metadata](#dub_metadata)
+  - [dub_text](#dub_text)
+  - [dub_characters](#dub_characters)
+  - [dub_shows](#dub_shows)
+  - [dub_id_by_shows](#dub_id_by_shows)
+- [Examples](#examples)
+
 ## Installation
 `dubbR` is not on CRAN yet, please install from GitHub:
 ```r
