@@ -90,3 +90,41 @@ Get the list of IDs that are in scope for the selected set of shows. This would 
 - *Input parameter:* `shows` - a show or a list of shows for which we'd like to return the `dub_id`s.
 
 ## Examples
+
+This is a typical workflow of leveraging the package's capabilities:
+
+1. See what shows are available in the package.
+
+```r
+dub_shows()
+```
+
+2. Look at the metadata for the show(s) you're interested in.
+
+```r
+dub_metadata() %>%
+  filter(show == "Fifth Gear")
+```
+
+3. Either select specific episodes and filter by `dub_id`, or select a show and use the `dub_id_by_shows` function...
+
+   - To filter for the scripts that are stored line by line.
+   
+   ```r
+   dub_text(dub_id_by_shows("Fifth Gear"))
+   ```
+   
+   - Or to filter for the characters that appear in the show to later apply them as stopwords.
+   
+   ```r
+   dub_characters(dub_id_by_shows("Fifth Gear"))
+   ```
+   
+4. Use the `tidytext` package to perform text analysis.
+
+```r
+library(tidytext)
+
+dub_text(dub_id_by_shows("Fifth Gear")) %>%
+  unnest_tokens(word, text)
+```
