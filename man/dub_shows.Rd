@@ -10,6 +10,9 @@
 \usage{
 dub_shows()
 }
+\value{
+tibble
+}
 \description{
 A unique list of the shows that appear in the package. It can be used to explore the package and filter the contents.
 }
@@ -18,5 +21,5 @@ dub_shows()
 
 }
 \seealso{
-dub_metadata, dub_text, dub_characters
+\code{\link{dub_metadata}}, \code{\link{dub_text}}, \code{\link{dub_characters}}
 }

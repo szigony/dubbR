@@ -10,6 +10,9 @@ dub_id_by_shows(shows)
 \arguments{
 \item{shows}{A show or a list of shows for which we'd like to return the \code{dub_id}s.}
 }
+\value{
+vector
+}
 \description{
 Get the list of IDs that are in scope for the selected set of shows.
 }
@@ -22,5 +25,5 @@ dub_id_by_shows(c("Fifth Gear", "Finding Bigfoot"))
 
 }
 \seealso{
-dub_shows, dub_metadata
+\code{\link{dub_text}}, \code{\link{dub_characters}}
 }

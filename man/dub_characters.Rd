@@ -14,6 +14,9 @@ dub_characters(dub_id)
 \arguments{
 \item{dub_id}{A list of IDs for which the characters should be imported.}
 }
+\value{
+tibble
+}
 \description{
 The characters from the audiovisual translations. This can be used to create \code{anti_join}s so that the character names wouldn't skew the analysis.
 }
@@ -24,5 +27,5 @@ dub_characters(dub_id_by_shows("Fifth Gear"))
 
 }
 \seealso{
-dub_metadata, dub_text, dub_shows
+\code{\link{dub_metadata}}, \code{\link{dub_text}}, \code{\link{dub_shows}}, \code{\link{dub_id_by_shows}}
 }

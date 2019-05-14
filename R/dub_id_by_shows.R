@@ -8,13 +8,15 @@
 #'
 #' @param shows A show or a list of shows for which we'd like to return the \code{dub_id}s.
 #'
+#' @return vector
+#'
 #' @format Returns a list of \code{dub_id}s.
 #'
 #' @examples
 #' dub_id_by_shows("Fifth Gear")
 #' dub_id_by_shows(c("Fifth Gear", "Finding Bigfoot"))
 #'
-#' @seealso dub_shows, dub_metadata
+#' @seealso \code{\link{dub_text}}, \code{\link{dub_characters}}
 
 dub_id_by_shows <- function(shows) {
   in_scope_dubs <- dub_data()$dub_metadata %>%

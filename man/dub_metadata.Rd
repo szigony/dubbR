@@ -14,6 +14,9 @@
 \usage{
 dub_metadata()
 }
+\value{
+tibble
+}
 \description{
 Metadata about audiovisual translations. The scripts were translated by Patrik Szigeti.
 }
@@ -22,5 +25,5 @@ dub_metadata()
 
 }
 \seealso{
-dub_text, dub_characters, dub_shows
+\code{\link{dub_text}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}
 }

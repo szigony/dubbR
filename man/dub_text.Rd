@@ -14,6 +14,9 @@ dub_text(dub_id)
 \arguments{
 \item{dub_id}{A list of IDs for which the texts should be imported.}
 }
+\value{
+tibble
+}
 \description{
 The text of the audiovisual translations, formatted to be convenient for text analysis.
 }
@@ -24,5 +27,5 @@ dub_text(dub_id_by_shows("Fifth Gear"))
 
 }
 \seealso{
-dub_metadata, dub_characters, dub_shows
+\code{\link{dub_metadata}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}, \code{\link{dub_id_by_shows}}
 }

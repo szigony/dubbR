@@ -4,6 +4,8 @@
 #'
 #' @export
 #'
+#' @return tibble
+#'
 #' @format Returns a tibble with the metadata.
 #' \itemize{
 #'     \item \code{dub_id}: Unique identifier of the scripts.
@@ -16,7 +18,7 @@
 #' @examples
 #' dub_metadata()
 #'
-#' @seealso dub_text, dub_characters, dub_shows
+#' @seealso \code{\link{dub_text}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}
 
 dub_metadata <- function() {
   data <- dub_data()

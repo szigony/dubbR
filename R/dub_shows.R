@@ -5,6 +5,8 @@
 #' @importFrom tibble as.tibble
 #' @export
 #'
+#' @return tibble
+#'
 #' @format Returns a tibble with the unique list of shows that appear in the package.
 #' \itemize{
 #'     \item \code{show}: The unique TV shows in the package.
@@ -13,7 +15,7 @@
 #' @examples
 #' dub_shows()
 #'
-#' @seealso dub_metadata, dub_text, dub_characters
+#' @seealso \code{\link{dub_metadata}}, \code{\link{dub_text}}, \code{\link{dub_characters}}
 
 dub_shows <- function() {
   data <- dub_data()

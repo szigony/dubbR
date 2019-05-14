@@ -6,6 +6,8 @@
 #'
 #' @param dub_id A list of IDs for which the texts should be imported.
 #'
+#' @return tibble
+#'
 #' @format Returns a tibble with the text of the scripts.
 #' \itemize{
 #'     \item \code{dub_id}: Unique identifier of the scripts.
@@ -17,7 +19,7 @@
 #' dub_text(c(1, 2))
 #' dub_text(dub_id_by_shows("Fifth Gear"))
 #'
-#' @seealso dub_metadata, dub_characters, dub_shows
+#' @seealso \code{\link{dub_metadata}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}, \code{\link{dub_id_by_shows}}
 
 dub_text <- function(dub_id) {
   data <- dub_data()
