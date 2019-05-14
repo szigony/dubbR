@@ -22,7 +22,6 @@ dub_data <- function() {
   file_list <- list.files(path = "source_files/")
 
   # Create the shell for the outputs
-  raw_text <- NULL
   all_metadata <- NULL
   all_text <- NULL
   all_characters <- NULL
@@ -40,6 +39,7 @@ dub_data <- function() {
 
     # Data wrangling
     # The first table only contains the characteristics of the characters, such as gender and age
+    raw_text <- NULL
     for (i in seq(2, docx_tbl_count(doc), by = 1)) {
       raw_text <- bind_rows(raw_text, docx_extract_tbl(doc, i, header = FALSE))
     }
