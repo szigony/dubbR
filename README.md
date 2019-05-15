@@ -125,6 +125,13 @@ dub_metadata() %>%
 ```r
 library(tidytext)
 
-dub_text(dub_id_by_shows("Fifth Gear")) %>%
+fifth_gear_scripts <- dub_text(dub_id_by_shows("Fifth Gear")) %>%
   unnest_tokens(word, text)
+  
+fifth_gear_characters <- dub_characters(dub_id_by_shows("Fifth Gear")) %>%
+  rename(word = character) %>%
+  select(word)
+  
+fifth_gear_scripts %>%
+  anti_join(fifth_gear_characters)
 ```
