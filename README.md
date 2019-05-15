@@ -14,6 +14,7 @@ This package was created as part of an assignment for *Data Science 4 - Unstruct
   - [dub_shows](#dub_shows)
   - [dub_id_by_shows](#dub_id_by_shows)
 - [Examples](#examples)
+- [Known issues](#known-issues)
 
 ## Installation
 `dubbR` is not on CRAN yet, please install from GitHub:
@@ -135,3 +136,16 @@ fifth_gear_characters <- dub_characters(dub_id_by_shows("Fifth Gear")) %>%
 fifth_gear_scripts %>%
   anti_join(fifth_gear_characters)
 ```
+
+## Known issues
+
+- `NOTE: header=FALSE but table has a marked header row in the Word document`
+  
+  In some cases, the first column of the tables with the text are detected by `read_docx` function as likely headers.
+  
+- ```r
+  Warning messages:
+  1: In bind_rows_(x, .id) : Unequal factor levels: coercing to character
+  2: In bind_rows_(x, .id) :
+    binding character and factor vector, coercing into character vector
+  ```
