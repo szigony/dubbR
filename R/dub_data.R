@@ -48,7 +48,7 @@ dub_data <- function() {
     characters <- raw_text %>%
       rename(character = V2) %>%
       filter(character != "") %>%
-      filter(!grepl("(Férfi|Nő) \\d", character)) %>%
+      filter(!grepl("(Férfi|Nő)( \\d)?", character)) %>%
       mutate(dub_id = metadata$dub_id) %>%
       select(dub_id, character) %>%
       distinct()
