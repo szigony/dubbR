@@ -70,4 +70,4 @@ dubbr_metadata <- all_metadata
 dubbr_text <- all_text
 dubbr_characters <- all_characters
 
-usethis::use_data(dubbr_metadata, dubbr_text, dubbr_characters, overwrite = T)
+usethis::use_data(dubbr_metadata, dubbr_text, dubbr_characters, overwrite = T, internal = T)
