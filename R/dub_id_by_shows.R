@@ -20,7 +20,7 @@
 #' @seealso \code{\link{dub_text}}, \code{\link{dub_characters}}
 
 dub_id_by_shows <- function(shows) {
-  in_scope_dubs <- dub_data()$dub_metadata %>%
+  in_scope_dubs <- dubbr_metadata %>%
     filter(show %in% shows)
 
   return(in_scope_dubs$dub_id)

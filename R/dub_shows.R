@@ -19,11 +19,10 @@
 #' @seealso \code{\link{dub_metadata}}, \code{\link{dub_text}}, \code{\link{dub_characters}}
 
 dub_shows <- function() {
-  data <- dub_data()
-  shows <- as.tibble(data$dub_metadata %>%
+  shows <- as.tibble(dubbr_metadata %>%
     select(show) %>%
-    distinct()) %>%
-    arrange()
+    distinct() %>%
+    arrange())
 
   return(shows)
 }

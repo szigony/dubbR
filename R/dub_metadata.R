@@ -21,6 +21,5 @@
 #' @seealso \code{\link{dub_text}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}
 
 dub_metadata <- function() {
-  data <- dub_data()
-  return(data$dub_metadata)
+  return(dubbr_metadata)
 }

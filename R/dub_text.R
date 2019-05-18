@@ -23,14 +23,12 @@
 #' @seealso \code{\link{dub_metadata}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}, \code{\link{dub_id_by_shows}}
 
 dub_text <- function(dub_id) {
-  data <- dub_data()
-
   if (missing(dub_id)) {
-    dub_text <- data$dub_text
+    dub_text <- dubbr_text
   } else {
     id_list <- c(dub_id)
 
-    dub_text <- data$dub_text %>%
+    dub_text <- dubbr_text %>%
       filter(dub_id %in% id_list)
   }
 
