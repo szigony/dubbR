@@ -21,7 +21,8 @@ dub_shows <- function() {
   data <- dub_data()
   shows <- as.tibble(data$dub_metadata %>%
     select(show) %>%
-    distinct())
+    distinct()) %>%
+    arrange()
 
   return(shows)
 }
