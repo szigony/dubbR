@@ -118,7 +118,7 @@ dub_shows()
 
 ```r
 dub_metadata() %>%
-  filter(show == "Fifth Gear")
+  filter(show == "Finding Bigfoot")
 ```
 
 3. Either select specific episodes and filter by `dub_id`, or select a show and use the `dub_id_by_shows` function...
@@ -126,13 +126,13 @@ dub_metadata() %>%
    - To filter for the scripts that are stored line by line.
    
    ```r
-   dub_text(dub_id_by_shows("Fifth Gear"))
+   dub_text(dub_id_by_shows("Finding Bigfoot"))
    ```
    
    - Or to filter for the characters that appear in the show to later apply them as stopwords.
    
    ```r
-   dub_characters(dub_id_by_shows("Fifth Gear"))
+   dub_characters(dub_id_by_shows("Finding Bigfoot"))
    ```
    
 4. Use the `tidytext` package to perform text analysis.
