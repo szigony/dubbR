@@ -3,7 +3,6 @@
 #' A unique list of the shows that appear in the package. It can be used to explore the package and filter the contents.
 #'
 #' @importFrom tibble as.tibble
-#' @import dplyr
 #' @export
 #'
 #' @return tibble

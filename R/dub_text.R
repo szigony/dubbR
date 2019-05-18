@@ -2,10 +2,9 @@
 #'
 #' The text of the audiovisual translations, formatted to be convenient for text analysis.
 #'
-#' @import dplyr
 #' @export
 #'
-#' @param dub_id A list of IDs for which the texts should be imported.
+#' @param shows The show or shows that are of interest.
 #'
 #' @return tibble
 #'
@@ -17,8 +16,8 @@
 #'
 #' @examples
 #' dub_text()
-#' dub_text(c(1, 2))
-#' dub_text(dub_id_by_shows("Fifth Gear"))
+#' dub_text("Fifth Gear")
+#' dub_text(c("Fifth Gear", "Finding Bigfoot"))
 #'
 #' @seealso \code{\link{dub_metadata}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}, \code{\link{dub_id_by_shows}}
 

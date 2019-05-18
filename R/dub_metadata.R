@@ -4,6 +4,8 @@
 #'
 #' @export
 #'
+#' @param shows The show or shows that are of interest.
+#'
 #' @return tibble
 #'
 #' @format Returns a tibble with the metadata.
@@ -17,6 +19,8 @@
 #'
 #' @examples
 #' dub_metadata()
+#' dub_metadata("Fifth Gear")
+#' dub_metadata(c("Fifth Gear", "Finding Bigfoot"))
 #'
 #' @seealso \code{\link{dub_text}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}
 

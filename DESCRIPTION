@@ -1,7 +1,7 @@
 Package: dubbR
 Type: Package
 Title: dubbR package for text analysis made from Hungarian script translations
-Version: 0.1
+Version: 0.2
 Author: Patrik Szigeti
 Maintainer: Patrik Szigeti <szigeti.patrik@gmail.com>
 Description: This package contains some of the scripts I translated for Hungarian television, formatted to be convenient for text analysis.

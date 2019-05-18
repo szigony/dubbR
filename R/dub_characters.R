@@ -2,10 +2,9 @@
 #'
 #' The characters from the audiovisual translations. This can be used to create \code{anti_join}s so that the character names wouldn't skew the analysis.
 #'
-#' @import dplyr
 #' @export
 #'
-#' @param dub_id A list of IDs for which the characters should be imported.
+#' @param shows The show or shows that are of interest.
 #'
 #' @return tibble
 #'
@@ -17,8 +16,8 @@
 #'
 #' @examples
 #' dub_characters()
-#' dub_characters(c(1, 2))
-#' dub_characters(dub_id_by_shows("Fifth Gear"))
+#' dub_characters("Fifth Gear")
+#' dub_characters(c("Fifth Gear", "Finding Bigfoot"))
 #'
 #' @seealso \code{\link{dub_metadata}}, \code{\link{dub_text}}, \code{\link{dub_shows}}, \code{\link{dub_id_by_shows}}
 
