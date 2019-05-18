@@ -4,6 +4,7 @@
 #'
 #' This would tipically be used to filter for texts or characters of a specific show.
 #'
+#' @import dplyr
 #' @export
 #'
 #' @param shows A show or a list of shows for which we'd like to return the \code{dub_id}s.

@@ -2,6 +2,7 @@
 #'
 #' The text of the audiovisual translations, formatted to be convenient for text analysis.
 #'
+#' @import dplyr
 #' @export
 #'
 #' @param dub_id A list of IDs for which the texts should be imported.
