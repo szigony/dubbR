@@ -9,7 +9,7 @@
     \item \code{character}: The characters that appear in the scripts.
 }}
 \usage{
-dub_characters(dub_id)
+dub_characters(shows)
 }
 \arguments{
 \item{dub_id}{A list of IDs for which the characters should be imported.}

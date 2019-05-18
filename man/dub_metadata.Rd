@@ -12,7 +12,7 @@
     \item \code{episode}: The episode of the TV show within the season for which the translation was requested.
 }}
 \usage{
-dub_metadata()
+dub_metadata(shows)
 }
 \value{
 tibble

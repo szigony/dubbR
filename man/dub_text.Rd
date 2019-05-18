@@ -9,7 +9,7 @@
     \item \code{text}: The text from the scripts line by line.
 }}
 \usage{
-dub_text(dub_id)
+dub_text(shows)
 }
 \arguments{
 \item{dub_id}{A list of IDs for which the texts should be imported.}

@@ -20,6 +20,14 @@
 #'
 #' @seealso \code{\link{dub_text}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}
 
-dub_metadata <- function() {
-  return(dubbr_metadata)
+dub_metadata <- function(shows) {
+
+  if (missing(shows)) {
+    dub_metadata <- dubbr_metadata
+  } else {
+    dub_metadata <- dubbr_metadata %>%
+      filter(show %in% shows)
+  }
+
+  return(dub_metadata)
 }

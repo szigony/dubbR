@@ -22,15 +22,17 @@
 #'
 #' @seealso \code{\link{dub_metadata}}, \code{\link{dub_characters}}, \code{\link{dub_shows}}, \code{\link{dub_id_by_shows}}
 
-dub_text <- function(dub_id) {
-  if (missing(dub_id)) {
+dub_text <- function(shows) {
+
+  if (missing(shows)) {
     dub_text <- dubbr_text
   } else {
-    id_list <- c(dub_id)
-
-    dub_text <- dubbr_text %>%
-      filter(dub_id %in% id_list)
+    dub_text <- as.tibble(dubbr_metadata %>%
+      filter(show %in% shows) %>%
+      select(dub_id) %>%
+      inner_join(dubbr_text))
   }
 
   return(dub_text)
+
 }
