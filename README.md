@@ -5,6 +5,7 @@ This package was created as part of an assignment for *Data Science 4 - Unstruct
 
 #### Table of Contents
 
+- [Available Shows](#available-shows)
 - [Installation](#installation)
 - [Functions](#functions)
   - [dub_data](#dub_data)
@@ -15,6 +16,18 @@ This package was created as part of an assignment for *Data Science 4 - Unstruct
   - [dub_id_by_shows](#dub_id_by_shows)
 - [Examples](#examples)
 - [Known issues](#known-issues)
+
+## Available Shows
+
+Descriptions from IMDb. These shows all aired on the Discovery Channel in Hungary.
+
+- **Backroad Bounty** - With keen eyes for detail and a knack for finding hidden gems, Marty Gebel and Peter "Bam-Bam" Bamford team up to travel the back roads of rural Canada in hopes of bringing vintage and unique treasures to the spotlight.
+- **Ed Stafford Into the Unknown** - Ed Stafford is on a mission to investigate some of the planet's mysteries. Using photographs of Earth, taken by satellites, showing strange markings in some of the most remote places on the planet, he sets out to find the targets, and solve the riddles.
+- **Fifth Gear** - A motor magazine with the recent driving news, expert opinions, and practical & reliable advices.
+- **Finding Bigfoot** - Matt Moneymaker, founder of the Bigfoot Field Researchers Organisation (B.F.R.O.), and a team of the B.F.R.O.'s top investigators travel North America and the world to search for the mysterious creature called Bigfoot.
+- **Fire in the Hole** - Explosives expert Matt Barnett, founder and president of Texplo Explosives, is the man to call when you need something blown up.
+- **Incredible Engineering Blunders Fixed** - From sinking skyscrapers to demolition disasters, the world’s most bizarre engineering blunders are baffling examples of how man-made structures can go wrong. From the hilarious to the unbelievable, there are many ways to create unnecessary problems.
+- **Misfit Garage** - As things went in the workshop at Gas Monkey there was conflict and disagreements... Some which got certain guys either fired or forced them to take the road. But no, they aint giving up just yet. The fired up their own garage in the hopes of becoming a worthy rival for Gas Monkey.
 
 ## Installation
 `dubbR` is not on CRAN yet, please install from GitHub:
@@ -37,6 +50,7 @@ This is a hidden function that creates the tibbles that will serve as the basis 
   - None of the tables have headers.
   - Creating a tibble for characters:
     - Remove empty rows, keep only the **distinct** characters.
+    - Unnamed characters appear in the scripts as "Férfi X" or "Nő Y", these are removed, as none of them are addressed this way in the shows.
     - Add the `dub_id`.
   - Creating a tibble for the text:
     - Remove empty rows, and add the `dub_id`.
@@ -124,17 +138,22 @@ dub_metadata() %>%
 4. Use the `tidytext` package to perform text analysis.
 
 ```r
+library(dplyr)
 library(tidytext)
+library(dubbR)
 
-fifth_gear_scripts <- dub_text(dub_id_by_shows("Fifth Gear")) %>%
+finding_bigfoot_scripts <- dub_text(dub_id_by_shows("Finding Bigfoot")) %>%
   unnest_tokens(word, text)
   
-fifth_gear_characters <- dub_characters(dub_id_by_shows("Fifth Gear")) %>%
+finding_bigfoot_characters <- dub_characters(dub_id_by_shows("Finding Bigfoot")) %>%
   rename(word = character) %>%
-  select(word)
+  select(word) %>%
+  mutate(word = tolower(word)) %>%
+  distinct()
   
-fifth_gear_scripts %>%
-  anti_join(fifth_gear_characters)
+finding_bigfoot_scripts %>%
+  anti_join(finding_bigfoot_characters) %>%
+  anti_join(get_stopwords("hu"))
 ```
 
 ## Known issues
@@ -143,9 +162,13 @@ fifth_gear_scripts %>%
   
   In some cases, the first column of the tables with the text are detected by `read_docx` function as likely headers.
   
+  **Solution:** These scripts were removed from the package for now.
+  
 - ```r
   Warning messages:
   1: In bind_rows_(x, .id) : Unequal factor levels: coercing to character
   2: In bind_rows_(x, .id) :
     binding character and factor vector, coercing into character vector
   ```
+  
+  **Solution:** Pending.
