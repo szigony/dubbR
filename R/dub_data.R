@@ -19,7 +19,7 @@ dub_data <- function() {
   }
 
   # Read all files from the source_files/ directory
-  file_list <- list.files(path = "source_files/")
+  file_list <- list.files(path = "https://github.com/szigony/dubbR/tree/master/source_files/")
 
   # Create the shell for the outputs
   all_metadata <- NULL
